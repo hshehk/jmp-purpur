@@ -12,8 +12,8 @@
     <name>JoinMessagePlus</name>
 
     <properties>
-        <!-- build with a JDK that can handle classfile major version 65 (Java 21) -->
-        <java.version>21</java.version>
+        <!-- Minecraft/Purpur 26.2 requires Java 25; build with a JDK that can handle classfile major version 69 (Java 25) -->
+        <java.version>25</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mockbukkit.version>3.6.0</mockbukkit.version>
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
@@ -36,8 +36,8 @@
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <!-- require Java 21 or newer -->
-                                    <version>[21,)</version>
+                                    <!-- require Java 25 or newer (needed by Minecraft/Purpur 26.2) -->
+                                    <version>[25,)</version>
                                 </requireJavaVersion>
                             </rules>
                             <fail>true</fail>
@@ -184,7 +184,8 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>26.1.2.build.74-stable</version>
+            <!-- Purpur 26.2 is API-compatible with Paper 26.2; range picks up the latest 26.2 build -->
+            <version>[26.2.build,)</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
